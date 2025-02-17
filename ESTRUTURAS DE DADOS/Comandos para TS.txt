@@ -1,0 +1,36 @@
+=============================================
+PASSO A PASSO PARA INSTALAÇÃO DO TYPESCRIPT
+=============================================
+
+1. npm install -g typescript ts-node      // Instala globalmente o typescript.
+
+2. npm i -D typescript                           // Instala uma dependência de desenvolvimento (package-lock.json).
+
+3. npx tsc --init                                     // Inicializa o typescript no projeto, criando o tsconfig.jason
+
+4. npm i -D ts-node-dev                      // Instalação do typescript no projeto
+
+5. ts-node  fileName                            // Executa o arquivo
+
+
+
+====================
+        CASO NECESSÁRIO
+====================
+
+6. npm init -y                                        //Não é específico do TypeScript. Se já tiver um package.json, não precisa usar.
+
+7. npm install                                        // Instala
+
+
+
+
+
+
+===================
+      COMANDOS EXTRAS
+===================
+
+npm i --save-dev @types/prompt-sync    // Instala o prompt-sync
+
+npx tsc fileName                                  // Transpila o arquivo pro formato JS
