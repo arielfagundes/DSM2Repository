@@ -1,0 +1,22 @@
+{
+  "name": "aula2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ex01": "ts-node ./src/Exemplo01",
+    "ex02": "ts-node ./src/Exemplo02"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/prompt-sync": "^4.2.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
