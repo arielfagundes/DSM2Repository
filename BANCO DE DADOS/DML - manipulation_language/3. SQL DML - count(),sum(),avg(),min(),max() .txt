@@ -1,0 +1,75 @@
+				 <COUNT()> e having
+====================================<>==========================================
+-> SELECT COUNT(*)                          -> retorna a quantidade de registros
+   FROM tbcurso;	  		    da coluna no geral
+                        
+
+-> SELECT COUNT(municipio)     		    -> retorna a quantidade de registros
+   FROM tbcurso;                            de municípios mesmo que repetidos
+
+
+
+EXEMPLOS:
+
+-> SELECT turno, COUNT(*)                   -> o count(*) irá atuar no subconjunto
+   FROM tbcurso				    de turno
+   GROUP BY turno
+   ORDER BY turno asc;          
+
+-> SELECT turno, COUNT(*) 
+   FROM tbcurso
+   GROUP BY turno
+   HAVING count(*) < 100                    -> o termo HAVING é equivalente ao WHERE
+   ORDER BY turn asc;			    mas as funções só podem usar HAVING
+====================================================================================
+
+
+
+
+
+
+				  <SUM()>
+====================================<>===========================================
+-> SELECT SUM(id)    		 	    -> retorna a soma de todos os valores
+   FROM tbcurso;          		    da coluna, funcionando apenas números                  
+
+=================================================================================
+
+
+
+
+
+				  <AVG()>
+====================================<>=============================================
+-> SELECT AVG(vaga)    		 	    -> retorna a média dos valores da
+   FROM tbcurso;          		    coluna vaga, funcionando apenas números                  
+
+===================================================================================
+
+
+
+
+
+			      <MIN() & MAX()>
+====================================<>=============================================
+-> SELECT min(vaga), max(vaga)     	    -> retorna o mín e o máx dos valores da
+   FROM tbcurso;          		    coluna vaga, funcionando para núm e txt
+
+
+-> SELECT min(municipio), max(municipio)    -> retornará o mín e o máx de ordem alf
+   FROM tbcurso;           
+
+===================================================================================
+
+
+
+
+
+
+				  <AS()>
+====================================<>=============================================
+-> SELECT count(*) as "Quantidade", sum(vaga) as "Total de vagas 
+   FROM tbcurso;                  
+						   -> Renomeia a saída no resultado 
+===================================================================================
+

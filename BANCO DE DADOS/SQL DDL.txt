@@ -1,0 +1,61 @@
+
+		COMANDOS DDL - DataBase Definition Language
+===================<>===========================
+
+	<CREATE>
+
+CREATE database bdteste;
+CREATE table if not exists tbpessoa;
+
+
+
+	<DROP>
+
+DROP database if exists bdteste;
+DROP table if exists tbpessoa;
+
+
+
+	<ALTER>
+
+° renomeando a tabela:
+ALTER TABLE cliente RENAME TO tbl_cliente;                                        -> Renomeia a tabela
+
+° inserindo colunas:
+ALTER TABLE tbpessoa ADD email VARCHAR(100);           		       -> adiciona uma coluna chamada email
+ALTER TABLE cliente ADD COLUMN telefone VARCHAR(15);                -> Adiciona uma nova coluna
+
+° modificando colunas:
+ALTER TABLE tbpessoa MODIFY COLUMN nome VARCHAR(150);        -> aumentas os caracteres do nome
+ALTER TABLE cliente RENAME COLUMN telefone TO contato;              -> Renomeia a coluna
+
+
+° excluindo colunas:
+ALTER TABLE tbpessoa DROP COLUMN data_nasc;                                -> elimina a coluna data_nasc
+
+
+
+ CREATE TABLE funcionarios (
+id_func SERIAL PRIMARY KEY,
+nome VARCHAR(50),
+cargo VARCHAR(50),
+salario DECIMAL (10,2) CHECK (salario > 0));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<TRUNCATE>
+
+TRUNCATE TABLE tbpessoa;                          -> remove todos os registros da tbpessoa
+
+

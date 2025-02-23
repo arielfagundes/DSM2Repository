@@ -1,0 +1,15 @@
+ 			<Ligação entre tabelas>
+====================================<>===============================================
+table.PK = tableRelação.FK
+
+table.id = tableRelação.idtable
+
+
+
+EXEMPLOS:
+
+-> tbunidade.id = tbcurso_por_unidade.idunidade      -> liga registros dos dois lados 
+   	  		    
+-> tbcurso.id = tbcurso_por_unidade.idcurso          
+                              
+=====================================================================================

@@ -1,0 +1,68 @@
+		                 <SELECT>
+-----------------------------------------------------------------------------------
+-> SELECT * FROM table;              -> lista toda a tabela
+
+-> SELECT id, nome FROM table;       -> lista a tabela com o id e o nome
+
+-> SELECT id,nome,idade 
+   FROM tbpessoa
+   WHERE id > 2 
+   ORDER BY nome asc;		     -> busca colunas da tabela tbpessoa, com 
+                                     id maiores que 2 e nomes por ordem alfabética
+
+
+-> SELECT nome,idade FROM tbpessoa
+   WHERE idade < 30 or idade > 35;  -> busca info baseados na idade < 30 e > 35
+
+
+-> SELECT nome,idade,mail 
+   FROM tbpessoa
+   WHERE idade > 29 and mail is not null; -> busca info com base no mail is not null
+   ORDER BY idade asc, nome asc;
+
+
+	
+
+			<LIKE> and <NOT LIKE>
+-----------------------------------------------------------------------------------
+-> SELECT * FROM tbpessoa
+   WHERE nome like '%in%';           -> busca todos os nomes que contém as letras in
+ou                                   em qualquer posição;  
+   WHERE nome like '%a';            -> busca todos os nomes que finalizam na letra a;
+ou
+   WHERE nome NOT LIKE 'A%';        -> busca todos os nomes que não começam com A;
+	
+	    
+             		<ILIKE>
+-------------------------------------------------------------------------------------
+
+   WHERE nome ilike 'd%';           -> busca todos os nomes que iniciam com letra d,
+                                    independente de ser maiuscula ou minuscula, pois
+				    o ilike não usa upperCase;
+
+
+
+
+		            <INSERT>
+---------------------------------------------------------------------------
+-> INSERT INTO table ()
+   VALUES (,'');
+
+
+EXEMPLO:
+
+-> INSERT INTO tbpessoa (id, nome, email, idade)
+   VALUES (3, 'Maria Silva', NULL ou '@gmail.com', 49);
+---------------------------------------------------------------------------
+
+
+
+
+	
+		            <UPDATE>
+---------------------------------------------------------------------------
+ UPDATE table
+ SET nome = 'Maria Silvia Fagundes'
+ WHERE id = 3;                       -> atualiza o nome com o id 3 
+---------------------------------------------------------------------------
+

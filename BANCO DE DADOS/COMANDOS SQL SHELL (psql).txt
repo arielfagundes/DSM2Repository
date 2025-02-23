@@ -1,0 +1,11 @@
+\l ou \list      	  -> lista todas os bancos de dados existentes;
+\c DBname        -> muda para o DB escolhido;
+
+\conninfo          -> para saber em qual DATABASE está atual;
+\c postgres        -> volta ao postgres saindo da DATABASE;
+
+\dt                     -> lista todas as tabelas do banco conectado;
+
+\d TABLEname  -> ver a estrutura da tabela;
+
+

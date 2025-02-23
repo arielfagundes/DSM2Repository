@@ -1,0 +1,55 @@
+				<DISTINCT>
+====================================<>==========================================
+-> SELECT DISTINCT municipio FROM tbcurso
+   ORDER BY municipio asc;
+
+-> SELECT DISTINCT municipio,turno FROM tbcurso
+   ORDER BY municipio asc;
+--------------------------------------------------------------------------------
+
+			
+				<DISTINCT ON>
+====================================<>==========================================
+-> SELECT DISTINCT ON(municipio) municipio,curso
+   FROM tbcurso
+   ORDER BY municipio asc;
+
+-> SELECT DISTINCT ON(curso) id,curso,municipio
+   FROM tbcurso
+   ORDER BY curso asc;    -> mostrará as info ascendentes do curso sem repetição
+                          precisando ser asc somente do que for usado como param.
+--------------------------------------------------------------------------------
+
+
+
+				<limit & offset>
+====================================<>==========================================
+-> SELECT municipio,curso FROM tbcurso
+   ORDER BY municipio asc
+   limit 10;
+
+-> SELECT id,curso,municipio
+   FROM tbcurso
+   ORDER BY id asc
+   LIMIT 5                   -> limita a 5 registros
+   OFFSET 3;                 -> desloca o início em 3 posições
+
+--------------------------------------------------------------------------------
+
+
+
+
+			       <GROUP BY>
+====================================<>==========================================
+-> SELECT municipio FROM tbcurso
+   GROUP BY municipio
+   ORDER BY municipio asc
+   
+
+-> SELECT curso,municipio
+   FROM tbcurso
+   GROUP BY curso,municipio 
+   ORDER BY curso asc;             -> todas os param. devem estar à direita do
+				   select e também no group by
+--------------------------------------------------------------------------------
+

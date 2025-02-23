@@ -1,4 +1,19 @@
 =============================================
+PASSO A PASSO PARA INSTALAÇÃO DO FRONT REACT
+=============================================
+
+npm create vite@latest front -- --template react-ts
+
+cd front
+
+npm install
+
+npm run dev
+
+
+
+
+=============================================
 PASSO A PASSO PARA INSTALAÇÃO DO TYPESCRIPT
 =============================================
 

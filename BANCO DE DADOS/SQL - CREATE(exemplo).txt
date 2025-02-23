@@ -1,0 +1,45 @@
+
+ drop database if exists bdteste
+ drop table if exists empregado  > exclui a tabela empregado se ela existe!
+
+
+	          PARA CRIAR RELACIONAMENTO ENRE TABELAS
+====================================<>=====================================
+
+-> As tabelas que possuem chave estrangeira precisam ser excluídas antes.
+-> Essas tabelas precisam ser criadas por último.
+
+ CREATE TABLE if not exists departamento (
+	iddepartamento INTEGER PRIMARY KEY,
+	nome VARCHAR(20) NOT NULL
+   );
+
+-> Após, criar a tabela que contém a chave estrangeira
+
+ CREATE TABLE if not exists empregado (
+	idempregado INTEGER PRIMARY KEY,
+	idtrabalho INTEGER NOT NULL,
+	nome VARCHAR(50) NOT NULL UNIQUE,
+	peso FLOAT,
+	CONSTRAINT pk_trabalho
+	FOREIGN KEY (idtrabalho)
+	REFERENCES departamento (iddepartamento)
+); ou a referência pode ser colocada da seguinte forma na coluna idtrabalho:
+
+	idtrabalho INTEGER NOT NULL REFERENCES departamento (iddepartamento)
+
+
+
+
+
+====================================<>=====================================
+  		COMANDOS DE VERIFICAÇÃO E VALORES PADRÕES
+====================================<>=====================================
+
+ CHECK (peso > 0)                 > verifica se o peso é maior que zero.
+ salario INTEGER default 1000.0   > se nenhum valor for fornecido, 1000.0 será o valor padrão.  
+
+
+
+
+
