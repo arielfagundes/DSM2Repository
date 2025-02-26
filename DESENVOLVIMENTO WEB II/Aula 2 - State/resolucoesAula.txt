@@ -1,0 +1,61 @@
+========== EXPLICAÇÃO ============
+
+import { useState } from "react";
+
+export default function App(){ //componente sempre inicia com a letra maiúscula.
+                               //componente sempre retorna um xml
+
+  const [nome, setNome] = useState<string>("Ariel"); // useState: mudança de estado - Atribuído
+
+  const [idade, setAge] = useState<number>(53);
+
+  const [peso, setPeso] = useState<number>(); //<type>Uma boa prática de programação
+
+
+  function handleNome(e){ //evento
+
+    setNome(e.target.value); //vai mudando o nome instantaneamente, monitora a variável.
+  }
+
+  function handleAge(e){
+
+    setAge(e.target.value);
+  }
+
+  function handlePeso(e){
+    
+    setPeso(e.target.value);
+  }
+
+  function handleSave(){
+
+    console.log(`APARECERAM AQUI SEUS DADOS: ${nome}, ${idade} anos e ${peso} kg.`)
+  }
+
+  //onChange: para alterar conteúdo instantaneamente
+  
+  return ( 
+  <div>
+    <input value={nome} onChange={handleNome} /> 
+    <div>Nome: {nome}</div> 
+
+    <input type="number" value={idade} onChange={handleAge} />
+    <div>Idade (anos): {idade}</div>
+
+    <input type="number" value={peso} onChange={handlePeso} />
+    <div>Peso (kg): {peso}</div>
+
+    <br />
+
+    <div>
+      {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
+      <button onClick={handleSave}>Salvar</button> 
+    </div>
+
+  </div>
+  
+  )
+}
+
+
+============= SEGUNDA RESOLUÇÃO ===============

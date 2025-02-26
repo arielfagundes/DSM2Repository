@@ -1,61 +1,56 @@
-import { useState } from "react";
+import { useState } from "react"
+
+interface Person {
+  nome: string;
+  idade: number;
+}
 
 export default function App(){
 
-  const [nome, setNome] = useState<string>("Ariel"); // useState: mudança de estado - Atribuído
+  const [nome, setNome] = useState<string>("");
+  const [idade, setIdade] = useState<string>("");
+  const [lista, setLista] = useState<Person[]>([]);
 
-  const [idade, setAge] = useState<number>(53);
-
-  const [peso, setPeso] = useState<number>(); //<type>Uma boa prática de programação
-
-
-  function handleNome(e){ //evento
-
+  function handleNome(e){
     setNome(e.target.value);
-
   }
 
-  function handleAge(e){
-
-    setAge(e.target.value);
-  
+  function handleIdade(e){
+    setIdade(e.target.value);
   }
 
-  function handlePeso(e){
-    
-    setPeso(e.target.value);
-  
+  function handleSave(e){
+    setLista([...lista, {nome, idade: Number(idade)}]);
+    setNome("");
+    setIdade("");
   }
 
-  function handleSave(){
 
-    console.log(`APARECEU AQUI SEUS DADOS: ${nome}, ${idade} anos e ${peso} kg.`)
 
-  }
-  
   return ( 
   <div>
-    <input value={nome} onChange={handleNome} />
-    <div>Nome: {nome}</div> 
-
-    <input type="number" value={idade} onChange={handleAge} />
-    <div>Idade (anos): {idade}</div>
-
-    <input type="number" value={peso} onChange={handlePeso} />
-    <div>Peso (kg): {peso}</div>
-
-    <br />
-
     <div>
-      <button onClick={handleSave}>Salvar</button> 
+      <label htmlFor="name">Nome:</label>
+      <input type="text" id="name" onChange={handleNome} value={nome}/>
+    </div>
+    <div>
+    <label htmlFor="idade">Idade:</label>
+    <input id="idade" onChange={handleIdade} value={idade}/>
     </div>
 
+    <button onClick={handleSave}>Salvar</button>
+
+    <ol>
+      {lista.map((item, indice) => (
+        <li key={indice}>
+          {item.nome} - {item.idade}
+        </li>
+      ))}
+    </ol>
 
   </div>
-  
   )
 }
-
 
 
 
