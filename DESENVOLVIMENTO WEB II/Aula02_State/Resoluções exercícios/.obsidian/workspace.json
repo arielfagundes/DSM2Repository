@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "2da35f1c46aceacf",
+        "id": "2eeb317e90994001",
         "type": "tabs",
         "children": [
           {
-            "id": "00af763d9308aa11",
+            "id": "b1a6df6ab931e1f1",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -168,8 +168,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "00af763d9308aa11",
+  "active": "b1a6df6ab931e1f1",
   "lastOpenFiles": [
+    "Matemática - Aula 02.md",
+    "MATEMÁTICA.md",
     "Welcome.md",
     "Exercício 1.md"
   ]
